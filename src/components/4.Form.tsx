@@ -7,8 +7,11 @@ import {
   Input,
   InputField,
   View,
+  Button,
+  ButtonText,
 } from "@gluestack-ui/themed";
 import React from "react";
+import { Pressable } from "react-native";
 
 const Form = () => {
   return (
@@ -25,14 +28,14 @@ const Form = () => {
             Username
           </FormControlLabelText>
         </FormControlLabel>
-        <Input>
+        <Input rounded={"$lg"}>
           <InputField
             type="text"
             placeholder="username"
+            rounded={"$lg"}
             borderWidth={1}
             borderColor="black"
             padding={4}
-            rounded={10}
           />
         </Input>
       </View>
@@ -43,21 +46,39 @@ const Form = () => {
             Password
           </FormControlLabelText>
         </FormControlLabel>
-        <Input>
+        <Input rounded={"$lg"}>
           <InputField
             type="password"
             placeholder="password"
+            rounded={"$lg"}
             borderWidth={1}
             borderColor="black"
             padding={4}
-            rounded={"$sm"}
           />
         </Input>
       </View>
 
-      <Box bg="$primary500" p="$5" rounded="$lg">
-        <Text colors="$primary600">Box with new primary color</Text>
-      </Box>
+      {/* <Button bg="$primary700" p="$5" rounded="$lg">
+        <ButtonText color="$secondary50">Add </ButtonText>
+      </Button> */}
+
+      <View mt={"$3"}>
+        <Button
+          size="md"
+          variant="solid"
+          action="primary"
+          isDisabled={false}
+          isFocusVisible={false}
+        >
+          <ButtonText>Add </ButtonText>
+        </Button>
+      </View>
+
+      <View>
+        <Pressable>
+          <Text>Login</Text>
+        </Pressable>
+      </View>
     </FormControl>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react'
-import Form from './src/screens/4.Form'
+import Form from './src/components/4.Form'
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet } from 'react-native';
 import { Center, View } from '@gluestack-ui/themed';
