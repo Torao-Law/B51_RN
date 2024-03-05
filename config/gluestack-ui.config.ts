@@ -24,6 +24,7 @@ export const gluestackUIConfig = createConfig({
     mr: 'marginRight',
     ml: 'marginLeft',
     rounded: 'borderRadius',
+    color: 'color'
   } as const,
   tokens: {
     colors: {

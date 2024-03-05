@@ -1,24 +1,25 @@
-import React from 'react'
-import { GluestackUIProvider, Text, Box } from "@gluestack-ui/themed"
-import { config } from "./config/gluestack-ui.config" 
-import Container from './Container'
+import React from "react";
+import { GluestackUIProvider, Text, Box } from "@gluestack-ui/themed";
+import { config } from "./config/gluestack-ui.config";
+import Container from "./Container";
+import { NavigationContainer } from "@react-navigation/native";
+
 
 const App = () => {
   return (
     <GluestackUIProvider config={config}>
-      <Container />
+      <NavigationContainer>
+        <Container />
+      </NavigationContainer>
     </GluestackUIProvider>
-  )
-}
+  );
+};
 
-export default App
-
-
-
+export default App;
 
 // import React from 'react'
 // import { GluestackUIProvider, Text, Box } from "@gluestack-ui/themed"
-// // import { config } from "./config/gluestack-ui.config" 
+// // import { config } from "./config/gluestack-ui.config"
 // import Container from './Container'
 // import { StyledProvider, createConfig } from "@gluestack-style/react"
 
@@ -88,8 +89,6 @@ export default App
 //   },
 // } as const)
 
-
-
 // const App = () => {
 //   return (
 //     <StyledProvider config={config}>
@@ -99,8 +98,6 @@ export default App
 // }
 
 // export default App
-
-
 
 // ################ LIST AND KEY
 // import { StatusBar } from 'expo-status-bar';
@@ -116,14 +113,14 @@ export default App
 //   React.useEffect(() => {
 //     setThreads(Dummy)
 //   }, [])
-  
+
 //   // threads.content.user
 //   // threads?.content?.user
 //   // nullist
 //   return (
 //     <View style={styles.container}>
 //       <StatusBar style="auto" />
-      
+
 //       { threads?.map((data: IThread, index: number) => (
 //           <ThreadCard key={index} content={data.content} image={data.image} />
 //         )
@@ -145,7 +142,7 @@ export default App
 //   }
 // });
 
-// ################ EVENT 
+// ################ EVENT
 // import { StatusBar } from 'expo-status-bar';
 // import { StyleSheet, Text, View } from 'react-native';
 // import Thread from './screens/2.embed-expression';
@@ -154,7 +151,7 @@ export default App
 //   return (
 //     <View style={styles.container}>
 //       <StatusBar style="auto" />
-      
+
 //       <Thread />
 //     </View>
 //   );
@@ -172,7 +169,6 @@ export default App
 //     color: 'red'
 //   }
 // });
-
 
 // ################ COMPONENT
 // import { StatusBar } from 'expo-status-bar';

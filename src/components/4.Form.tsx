@@ -58,9 +58,9 @@ const Form = () => {
         </Input>
       </View>
 
-      {/* <Button bg="$primary700" p="$5" rounded="$lg">
-        <ButtonText color="$secondary50">Add </ButtonText>
-      </Button> */}
+      <Button bg="$primary700" p="$2" rounded="$lg">
+        <ButtonText color="$secondary50">Test</ButtonText>
+      </Button>
 
       <View mt={"$3"}>
         <Button

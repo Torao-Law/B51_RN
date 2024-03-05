@@ -1,27 +1,71 @@
-import React from 'react'
-import Form from './src/components/4.Form'
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet } from 'react-native';
-import { Center, View } from '@gluestack-ui/themed';
+import React from "react";
+import { StatusBar } from "expo-status-bar";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Home from "./src/screens/Home";
+import Detail from "./src/screens/Detail";
+import Profile from "./src/screens/Profile";
+import { Image, Text } from "react-native";
 
-const Container = () => {
+const Stack = createNativeStackNavigator();
+
+function LogoTitle() {
   return (
     <>
-      <StatusBar style='auto' />
-
-      <View style={styles.container}>
-        <Form />
-      </View>
+      <Image
+        style={{ width: 30, height: 30 }}
+        source={require("./src/assets/icon.png")}
+      />
+      <Text>Github</Text>
     </>
-  )
+  );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center"
-  }
-})
+const Container = () => {
+  const object: object = {
+    itemId: 86,
+    otherParam: "anything you want here",
+  };
+  return (
+    <>
+      <StatusBar style="auto" />
 
-export default Container
+      <Stack.Navigator initialRouteName="Home">
+        {/* <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{
+            title: "Home",
+            headerStyle: {
+              backgroundColor: "#f4511e",
+            },
+            headerTintColor: "#fff",
+            headerTitleStyle: {
+              fontWeight: "bold",
+            },
+            headerTitleAlign: "center"
+          }}
+        /> */}
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{
+            headerTitle: (props) => <LogoTitle {...props} />,
+            headerTitleAlign: "center",
+          }}
+        />
+        <Stack.Screen
+          name="Details"
+          component={Detail}
+          initialParams={object}
+        />
+        <Stack.Screen
+          name="Profile"
+          component={Profile}
+          options={({ route }) => ({ title: route.params.name })}
+        />
+      </Stack.Navigator>
+    </>
+  );
+};
+
+export default Container;
